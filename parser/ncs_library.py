@@ -48,7 +48,8 @@ class NcsLibrary(NCSAuth):
         NCS_HEADERS['user-agent'] = self.user_agent
         self._headers = NCS_HEADERS
         self._cookies = self._check_cookies()
-        self._replace_things = (('?', ''), ('/', ' '), ('|', ''), ('\\', ' '), ('>', ''), ('<', ''), ('\'', ''), ('*', ''), ('`', '')) # things that shouldn't be in folder name
+        # things that shouldn't be in folder name
+        self._replace_things = (('?', ''), ('/', ' '), ('|', ''), ('\\', ' '), ('>', ''), ('<', ''), ('\'', ''), ('*', ''), ('`', ''))
         self.step = step
         
     @property
