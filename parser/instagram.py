@@ -1,4 +1,5 @@
-#dependecies
+# dependecies
+# import asyncio
 import aiohttp
 # build-in imports
 from datetime import datetime
