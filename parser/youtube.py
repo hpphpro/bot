@@ -27,7 +27,7 @@ class Converter:
     def convert_single(self, audio: bool=False, video: bool=False) -> str:
         if self.playlist_url:
             raise TypeError('Expected url with single video, got playlist. Try to use convert_playlist() instead')
-        if all([not audio, not video]):
+        if not all([audio, video]):
             raise TypeError('Expected at least one parameter, got 0')
         if audio:
             info(f'Downloading audio from {self.single_url}')
@@ -44,7 +44,7 @@ class Converter:
         folder = f'{self.title}\\' if sys.platform == 'win32' else f'{self.title}/'
         if self.single_url:
             raise TypeError('Expected url with playlist, got single video. Try to use convert_single() instead')
-        if all([not playlist_audio, not playlist_video]):
+        if not all([playlist_audio, playlist_video]):
             raise TypeError('Expected at least one parameter, got 0')
         videos = self.__youtube.videos
         if playlist_audio:
