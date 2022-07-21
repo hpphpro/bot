@@ -73,7 +73,7 @@ class NCSAuth:
             
 
     def get_cookie(self) -> dict:
-        '''Getting cookies for instagram'''
+        '''Getting cookies for ncs'''
         cookies = {}
         with open(f'{self.path}ncs_cookies.pkl', 'rb') as file:
             for item in pickle.load(file):
