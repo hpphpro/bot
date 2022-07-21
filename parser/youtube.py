@@ -9,7 +9,7 @@ class Converter:
         self.playlist_url = playlist_url
         if all([self.single_url, self.playlist_url]):
             raise TypeError('Only one parameter expected, got 2')
-        elif all([not self.single_url, not self.playlist_url]):
+        elif not all([self.single_url, self.playlist_url]):
             raise TypeError('At least one parameter expected, got 0')
         if self.single_url: self.__youtube = YouTube(self.single_url) 
         if self.playlist_url: self.__youtube = Playlist(self.playlist_url)
